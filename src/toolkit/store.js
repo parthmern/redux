@@ -1,10 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, createReducer } from "@reduxjs/toolkit";
+import profileSlice from "./slices/profileSlice";
+import authSlice from "./slices/authSlice";
+import counterSlice from "./slices/counterSlice";
 
-const store = configureStore({
-    reducer : {
-        
-    }
-});
+const rootReducer = combineReducers({
+    profile : profileSlice ,
+    auth : authSlice ,
+    counter : counterSlice, 
+})
 
-
-export default store ;
+export default rootReducer ;
